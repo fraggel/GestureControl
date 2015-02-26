@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screenOff">Screen Off Gesture</string>
+    <string name="screenOn">Screen On Gesture</string>
+    <string name="screenAir">Air Gesture</string>
+</resources>
