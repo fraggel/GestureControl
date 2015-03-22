@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="screenOff">Screen Off Gesture</string>
-    <string name="screenOn">Screen On Gesture</string>
-    <string name="screenAir">Air Gesture</string>
+    <string name="app_name">Control por gestos</string>
+    <string name="title_activity_screen_off">Gestos pantalla apagada</string>
+    <string name="title_activity_screen_on">Gestos pantalla encendida</string>
+    <string name="title_activity_air_gesture">Gestos control sensor</string>
+    <string name="masterScreenOff">Gestos pantalla apagada</string>
+    <string name="drawDC">Doble pulsacion para desbloquear</string>
+    <string name="drawUpU">Dibuja hacia arriba para desbloquear</string>
+    <string name="drawDownM">Dibuja hacia abajo para continuar/pausar la música</string>
+    <string name="drawRightM">Dibuja hacia la derecha para siguiente canción</string>
+    <string name="drawLeftM">Dibuja hacia la izquierda para anterior canción</string>
+    <string name="drawC">Escribe \'c\' para abrir </string>
+    <string name="drawE">Escribe \'e\' para abrir </string>
+    <string name="drawW">Escribe \'w\' para abrir </string>
+    <string name="drawM">Escribe \'m\' para abrir </string>
+    <string name="drawO">Escribe \'o\' para abrir </string>
+    <string name="drawRightBt">Desliza de izquirda a derecha (botones táctiles)</string>
+    <string name="drawLeftBt">Desliza de derecha a izquierda (botones táctiles)</string>
+    <string name="drawCDF">Cámara</string>
+    <string name="drawEDF">Navegador</string>
+    <string name="drawWDF">Gestor de archivos</string>
+    <string name="drawMDF">Música</string>
+    <string name="drawODF">Teléfono</string>
+    <string name="drawRightBtF">Ajustes</string>
+    <string name="drawLeftBtF">Mensajes</string>
+    <string name="threeCapture">Draw down thre fingers to screen capture</string>
+    <string name="doubleLock">Doble click on home to lock</string>
+    <string name="airCamera">Control the Camera</string>
+    <string name="airFM">Control the FM Radio</string>
+    <string name="airMusic">Control the Music</string>
+    <string name="airGallery">Control the Gallery</string>
+    <string name="airUnlock">Unlock</string>
+    <string name="airLauncher">Control the Launcher</string>
+    <string name="title_activity_app_select">Elige App</string>
+
 </resources>

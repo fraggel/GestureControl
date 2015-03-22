@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.fraggel.gesturecontrol" >
+    package="es.fraggel.gesturecontrol"
+    coreApp="true"
+    android:sharedUserId="android.uid.system"
+    >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.CONTROL_KEYGUARD" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppThemeWhite" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".screenOffActivity"
             android:label="@string/title_activity_screen_off" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".screenOnActivity"
@@ -33,7 +45,84 @@
             android:name=".gestureReceiver"
             android:enabled="true"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.GESTURE" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
         </receiver>
-    </application>
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
 
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".appSelect"
+            android:label="@string/title_activity_app_select" >
+        </activity>
+    </application>
+<!--
+android.policy.jar
+PhoneWindowManager
+
+en el interceptKeyBeforeQueueing
+debajo de la creacion del keyCode
+
+move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v12, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->sendBroadCast(ILandroid/content/Context;)V
+
+    Metodo a poner en algun sitio del smali
+
+    .method public sendBroadCast(ILandroid/content/Context;)V
+    .locals 2
+    .param p1, "keyC"    # I
+    .param p2, "ctx"    # Landroid/content/Context;
+
+    .prologue
+    .line 4523
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.GESTURE"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 4524
+    .local v0, "intent2":Landroid/content/Intent;
+    const-string v1, "key_code"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 4525
+    invoke-virtual {p2, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 4526
+    return-void
+.end method
+-->
 </manifest>

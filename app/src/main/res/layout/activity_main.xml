@@ -9,20 +9,22 @@
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screenOff"
+        android:text="@string/title_activity_screen_off"
         android:id="@+id/screenOff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screenOn"
-        android:id="@+id/screenOn" />
+        android:text="@string/title_activity_screen_on"
+        android:id="@+id/screenOn"
+        android:enabled="false"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screenAir"
-        android:id="@+id/screenAir" />
+        android:text="@string/title_activity_air_gesture"
+        android:id="@+id/screenAir"
+        android:enabled="false"/>
 </LinearLayout>

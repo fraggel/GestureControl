@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">手势控制</string>
+    <string name="title_activity_screen_off">屏幕关闭手势</string>
+    <string name="title_activity_screen_on">屏幕手势</string>
+    <string name="title_activity_air_gesture">空中手势</string>
+    <string name="masterScreenOff">屏幕关闭手势</string>
+    <string name="drawDC">双击唤醒</string>
+    <string name="drawUpU">制定解锁</string>
+    <string name="drawDownM">画下来，继续/暂停音乐</string>
+    <string name="drawRightM">得出正确的下一首歌曲</string>
+    <string name="drawLeftM">得出正确的上一首歌曲</string>
+    <string name="drawC">\'c\' 手势 </string>
+    <string name="drawE">\'e\' 手势 </string>
+    <string name="drawW">\'w\' 手势 </string>
+    <string name="drawM">\'m\' 手势 </string>
+    <string name="drawO">\'o\' 手势 </string>
+    <string name="drawRightBt">从幻灯片左到右（底部按钮）</string>
+    <string name="drawLeftBt">幻灯片由右至左（底部按钮）</string>
+    <string name="drawCDF">相机</string>
+    <string name="drawEDF">浏览器</string>
+    <string name="drawWDF">文件管理器</string>
+    <string name="drawMDF">音乐</string>
+    <string name="drawODF">电话</string>
+    <string name="drawRightBtF">设置</string>
+    <string name="drawLeftBtF">信息</string>
+    <string name="threeCapture">画下来三个手指截屏e</string>
+    <string name="doubleLock">多布尔点击主场锁定</string>
+    <string name="airCamera">控制摄像机</string>
+    <string name="airFM">控制FM收音机</string>
+    <string name="airMusic">控制音乐</string>
+    <string name="airGallery">控制图库</string>
+    <string name="airUnlock">开锁</string>
+    <string name="airLauncher">控制启动</string>
+    <string name="title_activity_app_select">选择应用程序</string>
+
+</resources>

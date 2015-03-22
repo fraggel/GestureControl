@@ -8,33 +8,39 @@
     tools:context="es.fraggel.gesturecontrol.AirGestureActivity">
 
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch1" />
+        android:text="@string/airCamera"
+        android:id="@+id/airCamera"
+        android:layout_marginBottom="10dp"/>
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch2" />
+        android:text="@string/airFM"
+        android:id="@+id/airFM"
+        android:layout_marginBottom="10dp"/>
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch3" />
+        android:text="@string/airGallery"
+        android:id="@+id/airGallery"
+        android:layout_marginBottom="10dp"/>
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch4" />
+        android:text="@string/airLauncher"
+        android:id="@+id/airLauncher"
+        android:layout_marginBottom="10dp"/>
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch5" />
+        android:text="@string/airMusic"
+        android:id="@+id/airMusic"
+        android:layout_marginBottom="10dp"/>
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch6" />
+        android:text="@string/airUnlock"
+        android:id="@+id/airUnlock"
+        android:layout_marginBottom="10dp"/>
 </LinearLayout>
