@@ -33,5 +33,6 @@
     <string name="airUnlock">Unlock</string>
     <string name="airLauncher">Control the Launcher</string>
     <string name="title_activity_app_select">Elige App</string>
+    <string name="drawDCW">Haz doble click para encender la pantalla</string>
 
 </resources>

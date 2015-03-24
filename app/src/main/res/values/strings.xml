@@ -34,5 +34,6 @@
     <string name="airUnlock">Unlock</string>
     <string name="airLauncher">Control the Launcher</string>
     <string name="title_activity_app_select">Select App</string>
+    <string name="drawDCW">Doble click to wakeup screen</string>
 
 </resources>

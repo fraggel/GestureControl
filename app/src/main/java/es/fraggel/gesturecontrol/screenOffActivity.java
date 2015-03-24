@@ -21,6 +21,7 @@ import java.io.IOException;
 public class screenOffActivity extends ActionBarActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     Switch masterGestureOff=null;
     Switch drawDC=null;
+    Switch drawDCW=null;
     Switch drawUpU=null;
     Switch drawDownM=null;
     Switch drawRightM=null;
@@ -33,6 +34,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
     Switch drawRightBt=null;
     Switch drawLeftBt=null;
     TextView drawDCT=null;
+    TextView drawDCWT=null;
     TextView drawUpUT=null;
     TextView drawDownMT=null;
     TextView drawRightMT=null;
@@ -80,6 +82,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
         masterGestureOff=(Switch)findViewById(R.id.masterGestureOff);
         masterGestureOff.setOnCheckedChangeListener(this);
         drawDC=(Switch)findViewById(R.id.drawDC);
+        drawDCW=(Switch)findViewById(R.id.drawDCW);
         drawUpU=(Switch)findViewById(R.id.drawUpU);
         drawDownM=(Switch)findViewById(R.id.drawDownM);
         drawRightM=(Switch)findViewById(R.id.drawRightM);
@@ -94,6 +97,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
 
 
         drawDCT=(TextView)findViewById(R.id.drawDCT);
+        drawDCWT=(TextView)findViewById(R.id.drawDCWT);
         drawUpUT=(TextView)findViewById(R.id.drawUpUT);
         drawDownMT=(TextView)findViewById(R.id.drawDownMT);
         drawRightMT=(TextView)findViewById(R.id.drawRightMT);
@@ -114,6 +118,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
         masterGestureOff.setChecked(ajustes.getBoolean("masterGestureOff", false));
         cambiarEnabled(ajustes.getBoolean("masterGestureOff", false));
         drawDC.setChecked(ajustes.getBoolean("drawDC",false));
+        drawDCW.setChecked(ajustes.getBoolean("drawDCW",false));
         drawUpU.setChecked(ajustes.getBoolean("drawUpU",false));
         drawDownM.setChecked(ajustes.getBoolean("drawDownM",false));
         drawRightM.setChecked(ajustes.getBoolean("drawRightM",false));
@@ -125,11 +130,13 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
         drawO.setChecked(ajustes.getBoolean("drawO",false));
         drawC.setChecked(ajustes.getBoolean("drawC",false));
 
+
         //drawRightBt.setChecked(ajustes.getBoolean("drawRightBt",false));
         //drawLeftBt.setChecked(ajustes.getBoolean("drawLeftBt",false));
     }
     public void cambiarEnabled(boolean enabled){
         drawDC.setEnabled(enabled);
+        drawDCW.setEnabled(enabled);
         drawUpU.setEnabled(enabled);
         drawDownM.setEnabled(enabled);
         drawRightM.setEnabled(enabled);
@@ -143,6 +150,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
         //drawLeftBt.setEnabled(enabled);
 
         drawDCT.setEnabled(enabled);
+        drawDCWT.setEnabled(enabled);
         drawUpUT.setEnabled(enabled);
         drawDownMT.setEnabled(enabled);
         drawRightMT.setEnabled(enabled);
@@ -158,6 +166,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
     public void asignarListeners(){
         masterGestureOff.setOnCheckedChangeListener(this);
         drawDC.setOnCheckedChangeListener(this);
+        drawDCW.setOnCheckedChangeListener(this);
         drawUpU.setOnCheckedChangeListener(this);
         drawDownM.setOnCheckedChangeListener(this);
         drawRightM.setOnCheckedChangeListener(this);
@@ -199,9 +208,21 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
         }else if(buttonView.getId()==R.id.drawDC) {
             if (isChecked) {
                 editorAjustes.putBoolean("drawDC", true);
+                editorAjustes.putBoolean("drawDCW", false);
+                drawDCW.setChecked(false);
                 editorAjustes.commit();
             } else {
                 editorAjustes.putBoolean("drawDC",false);
+                editorAjustes.commit();
+            }
+        }else if(buttonView.getId()==R.id.drawDCW) {
+            if (isChecked) {
+                editorAjustes.putBoolean("drawDCW", true);
+                editorAjustes.putBoolean("drawDC",false);
+                drawDC.setChecked(false);
+                editorAjustes.commit();
+            } else {
+                editorAjustes.putBoolean("drawDCW",false);
                 editorAjustes.commit();
             }
         }else if(buttonView.getId()==R.id.drawUpU) {
@@ -332,6 +353,7 @@ public class screenOffActivity extends ActionBarActivity implements CompoundButt
     }
     private void setCheckBoxEnabled(boolean isEnabled) {
         drawDC.setEnabled(isEnabled);
+        drawDCW.setEnabled(isEnabled);
         drawUpU.setEnabled(isEnabled);
         drawDownM.setEnabled(isEnabled);
         drawRightM.setEnabled(isEnabled);

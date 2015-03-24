@@ -93,30 +93,36 @@ public class gestureReceiver extends BroadcastReceiver{
                                     }
                 }else if(key_code==41 && ajustes.getBoolean("drawM",false)){
                     pulsado=pulsado+1;
-                                        if(pulsado==2) {
-                                            componetName = getGestureAppName(41, context);
-                                            if (isApkExist(context, componetName.getPackageName())) {
-                                                launchGestureApp(componetName, context);
-                                            }
-                                            unlockScreen(context,"m",ajustes.getString("persist.sys.off_m_def_appName",""));
-                                            pulsado = 0;
-                                        }
+                    if(pulsado==2) {
+                        componetName = getGestureAppName(41, context);
+                        if (isApkExist(context, componetName.getPackageName())) {
+                            launchGestureApp(componetName, context);
+                        }
+                        unlockScreen(context,"m",ajustes.getString("persist.sys.off_m_def_appName",""));
+                        pulsado = 0;
+                    }
                 }else if(key_code==43 && ajustes.getBoolean("drawO",false)){
                     pulsado=pulsado+1;
-                                            if(pulsado==2) {
-                                                componetName = getGestureAppName(43, context);
-                                                if (isApkExist(context, componetName.getPackageName())) {
-                                                    launchGestureApp(componetName, context);
-                                                }
-                                                unlockScreen(context,"o",ajustes.getString("persist.sys.off_o_def_appName",""));
-                                                pulsado = 0;
-                                            }
+                    if(pulsado==2) {
+                        componetName = getGestureAppName(43, context);
+                        if (isApkExist(context, componetName.getPackageName())) {
+                            launchGestureApp(componetName, context);
+                        }
+                        unlockScreen(context,"o",ajustes.getString("persist.sys.off_o_def_appName",""));
+                        pulsado = 0;
+                    }
                 }else if(key_code==49 && ajustes.getBoolean("drawDC",false)){
                     pulsado=pulsado+1;
-                                                if(pulsado==2) {
-                                                    unlockScreen(context,"Doble Click","Desbloquear");
-                                                    pulsado = 0;
-                                                }
+                    if(pulsado==2) {
+                        unlockScreen(context, "Doble Click", "Desbloquear");
+                        pulsado = 0;
+                    }
+                }else if(key_code==49 && ajustes.getBoolean("drawDCW",false)){
+                    pulsado=pulsado+1;
+                    if(pulsado==2) {
+                        wakeupScreen(context, "Doble Click", "Despertar");
+                        pulsado = 0;
+                    }
                 }else if(key_code==51 && ajustes.getBoolean("drawW",false)){
                     pulsado=pulsado+1;
                     if(pulsado==2) {
@@ -224,7 +230,11 @@ public class gestureReceiver extends BroadcastReceiver{
         ComponentName componetName = new ComponentName(packageName, activityName);
         return componetName;
     }
-
+    private void wakeupScreen(Context context,String letra,String app) {
+        PowerManager powermanager=  ((PowerManager)context.getSystemService(Context.POWER_SERVICE));
+        PowerManager.WakeLock tag = powermanager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "tag");
+        tag.acquire(100);
+    }
     private void unlockScreen(Context context,String letra,String app) {
         PowerManager powermanager=  ((PowerManager)context.getSystemService(Context.POWER_SERVICE));
         PowerManager.WakeLock tag = powermanager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "tag");

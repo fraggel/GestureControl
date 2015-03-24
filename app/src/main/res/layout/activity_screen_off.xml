@@ -48,6 +48,22 @@
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/drawDCW"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:text="@string/drawDCW"
+                android:id="@+id/drawDCWT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"/>
+
+        </TableRow>
+        <TableRow android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/drawUpU"
                 android:layout_marginBottom="15dp"/>
         <TextView
